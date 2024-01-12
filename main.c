@@ -4,15 +4,20 @@
 #define LENGTH 9
 
 void print_board(char *board);
+char *setup_gameboard(char *gameboard);
 
 int main(void) {
 	char *gameboard = malloc(LENGTH);
 
-	for(char i = '1'; i <= '9'; i++) {
-        gameboard[i - 49] = i;
-	}
-
+	setup_gameboard(gameboard);
 	print_board(gameboard);
+}
+
+char *setup_gameboard(char *gameboard) {
+	for(char i = '1'; i <= '9'; i++) {
+		gameboard[i - 49] = i;
+	}
+	return gameboard;
 }
 
 
