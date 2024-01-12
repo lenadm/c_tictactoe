@@ -8,8 +8,8 @@ void print_board(char *board);
 int main(void) {
 	char *gameboard = malloc(LENGTH);
 
-	for(int i = 0; i < LENGTH; i += 1) {
-		gameboard[i] = '.';
+	for(char i = '1'; i <= '9'; i++) {
+        gameboard[i - 49] = i;
 	}
 
 	print_board(gameboard);
@@ -22,6 +22,5 @@ void print_board(char *board) {
 	printf(" %c | %c | %c \n", board[3], board[4], board[5]);
 	printf("---+---+---\n");
 	printf(" %c | %c | %c \n", board[6], board[7], board[8]);
-
-
 }
+
