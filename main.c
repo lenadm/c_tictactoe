@@ -19,20 +19,25 @@ int main(void) {
 		if (counter % 2 == 0) {
 			int move = get_user_input(gameboard);
 			gameboard[move - 1] = 'x';
+			print_board(gameboard);
 		}
 		if (counter % 2 == 1) {
 			int move = get_ai_move(gameboard);
 			gameboard[move - 1] = 'o';
 		}
-		print_board(gameboard);
+		counter += 1;
 	}
 }
 
 	
+int get_ai_move(char *gameboard) {
+	return 1;
+}
+
 int get_user_input(char *gameboard) {
 	int input;
 	while(true) {
-		printf("which squaure would you like to place?");
+		printf("\rwhich squaure would you like to place? ");
 		scanf("%i", &input);
 		if(gameboard[input] != ('x' | 'o')) {
 			return input;
@@ -48,10 +53,10 @@ char *setup_gameboard(char *gameboard) {
 
 
 void print_board(char *board) {
-	printf(" %c | %c | %c \n", board[0], board[1], board[2]);
-	printf("---+---+---\n");
-	printf(" %c | %c | %c \n", board[3], board[4], board[5]);
-	printf("---+---+---\n");
-	printf(" %c | %c | %c \n", board[6], board[7], board[8]);
+	printf("\r %c | %c | %c \n", board[0], board[1], board[2]);
+	printf("\r---+---+---\n");
+	printf("\r %c | %c | %c \n", board[3], board[4], board[5]);
+	printf("\r---+---+---\n");
+	printf("\r %c | %c | %c \n", board[6], board[7], board[8]);
 }
 
